@@ -4,14 +4,14 @@ import ReactNative from 'react-native';
 const styles = require('../style.js')
 const {Text, View} = ReactNative;
 
-class TopBanner extends Component {
+class ActionBar extends Component {
   render() {
     return (
       <View>
-        <Text style={styles.topBar}>Lifting App</Text>
+        <Text>Dis da bottom</Text>
       </View>
     );
   }
 }
 
-module.exports = TopBanner;
+module.exports = ActionBar;

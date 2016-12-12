@@ -11,14 +11,16 @@ import {
   View
 } from 'react-native';
 const TopBanner = require('./components/TopBanner');
+const ActionBar = require('./components/ActionBar');
 const styles = require('./style.js');
 
 export default class LiftingApp extends Component {
   render() {
     return (
       <View>
-        <TopBanner style={styles.topBar}/>
+        <TopBanner/>
         <Text>Main Content</Text>
+        <ActionBar/>
       </View>
     );
   }
