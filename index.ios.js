@@ -7,17 +7,17 @@
 import React, { Component } from 'react';
 import {
   AppRegistry,
-  StyleSheet,
   Text,
   View
 } from 'react-native';
 const TopBanner = require('./components/TopBanner');
+const styles = require('./style.js');
 
 export default class LiftingApp extends Component {
   render() {
     return (
       <View>
-        <TopBanner/>
+        <TopBanner style={styles.topBar}/>
         <Text>Main Content</Text>
       </View>
     );
