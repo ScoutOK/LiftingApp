@@ -33,9 +33,13 @@ const styles = StyleSheet.create({
   workoutView: {
     backgroundColor: '#eee',
   },
+  workoutHead: {
+    margin: 10
+  },
   woProgress: {
     backgroundColor: '#333',
     height: 10,
+    marginTop: 10,
   },
   exerRow: {
     margin: 10,
