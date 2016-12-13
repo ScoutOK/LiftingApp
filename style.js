@@ -32,18 +32,18 @@ const styles = StyleSheet.create({
   },
   workoutView: {
     backgroundColor: '#eee',
-    padding: 10
   },
   woProgress: {
     backgroundColor: '#333',
     height: 10,
   },
   exerRow: {
-    marginTop: 10,
-    marginBottom: 10,
-    shadowColor: 'black',
-    shadowRadius: 10,
-    shadowOpacity: 1
+    margin: 10,
+    shadowColor: '#333',
+    shadowRadius: 2,
+    shadowOpacity: 1,
+    shadowOffset: {width: 0, height: 2},
+    borderRadius: 4,
   },
   exerciseHead: {
     fontWeight: 'bold',
