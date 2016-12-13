@@ -12,6 +12,7 @@ import {
 } from 'react-native';
 const TopBanner = require('./components/TopBanner');
 const ActionBar = require('./components/ActionBar');
+const Workout = require('./components/Workout');
 const styles = require('./style.js');
 
 export default class LiftingApp extends Component {
@@ -20,7 +21,7 @@ export default class LiftingApp extends Component {
       <View style={styles.container}>
         <TopBanner style={styles.topBottom}/>
         <View style={styles.mainBlock}>
-          <Text>Main Content</Text>
+          <Workout />
         </View>
         <ActionBar style={styles.topBottom}/>
       </View>
