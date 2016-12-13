@@ -18,11 +18,13 @@ class Workout extends Component {
     const progNum = 0.5
     return (
       <View style={styles.workoutView}>
-        <Text>Free Workout</Text>
-        <Text>December 12, 2016</Text>
-        <ProgressViewIOS style={styles.woProgress} progressViewStyle="bar"
-          progress={progNum}
-        />
+        <View style={styles.workoutHead}>
+          <Text>Free Workout</Text>
+          <Text>December 12, 2016</Text>
+          <ProgressViewIOS style={styles.woProgress} progressViewStyle="bar"
+            progress={progNum}
+          />
+        </View>
         <ListView
           dataSource = {this.state.dataSource}
           renderRow={Exercise}
