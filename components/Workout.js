@@ -45,11 +45,29 @@ const exerRow = (exercise, sectionId, rowId) => {
         dataSource = {setData}
         renderRow = {setRow}
         renderSeparator={(sectionId, rowId) => <View key={rowId} style={styles.minorSeparator} />}
+        renderHeader = {setRowHead}
         style={styles.setTable}
       />
     </View>
   )
 }
+
+const setRowHead = () => (
+  <View style={[styles.setRow, styles.setHead]}>
+    <View style={styles.setCell}>
+      <Text style={styles.setHeadText}>Set</Text>
+    </View>
+    <View style={[styles.setCell, styles.flex2]}>
+      <Text style={styles.setHeadText}>Weight</Text>
+    </View>
+    <View style={[styles.setCell, styles.flex2]}>
+      <Text style={styles.setHeadText}>Reps</Text>
+    </View>
+    <View style={styles.setCell}>
+      <Text style={styles.setHeadText}>Done</Text>
+    </View>
+  </View>
+)
 
 const setRow = (set, sectionId, rowId) => {
   const rowNum = Number(rowId) + 1
@@ -58,11 +76,14 @@ const setRow = (set, sectionId, rowId) => {
       <View style={styles.setCell}>
         <Text style={styles.setCellText}>{rowNum}</Text>
       </View>
-      <View style={styles.setCell, styles.flex2}>
+      <View style={[styles.setCell, styles.flex2]}>
         <Text style={styles.setCellText}>{set.weight}lbs</Text>
       </View>
-      <View style={styles.setCell, styles.flex2}>
+      <View style={[styles.setCell, styles.flex2]}>
         <Text style={styles.setCellText}>{set.reps}</Text>
+      </View>
+      <View style={styles.setCell}>
+        <Text style={styles.setCellText}>{set.complete ? 'yes' : 'no'}</Text>
       </View>
     </View>
   )
@@ -74,23 +95,28 @@ const dummyWorkout = [
     sets: [
       {
         weight: 150,
-        reps: 10
+        reps: 10,
+        complete: true
       },
       {
         weight: 150,
-        reps: 10
+        reps: 10,
+        complete: true
       },
       {
         weight: 150,
-        reps: 10
+        reps: 10,
+        complete: false
       },
       {
         weight: 150,
-        reps: 10
+        reps: 10,
+        complete: true
       },
       {
         weight: 150,
-        reps: 10
+        reps: 10,
+        complete: true
       }
     ]
   },
@@ -99,15 +125,18 @@ const dummyWorkout = [
     sets: [
       {
         weight: 150,
-        reps: 10
+        reps: 10,
+        complete: false
       },
       {
         weight: 150,
-        reps: 10
+        reps: 10,
+        complete: true
       },
       {
         weight: 150,
-        reps: 10
+        reps: 10,
+        complete: false
       }
     ]
   },
@@ -116,19 +145,23 @@ const dummyWorkout = [
     sets: [
       {
         weight: 150,
-        reps: 10
+        reps: 10,
+        complete: true
       },
       {
         weight: 150,
-        reps: 10
+        reps: 10,
+        complete: false
       },
       {
         weight: 150,
-        reps: 10
+        reps: 10,
+        complete: true
       },
       {
         weight: 150,
-        reps: 10
+        reps: 10,
+        complete: true
       }
     ]
   },
@@ -137,14 +170,17 @@ const dummyWorkout = [
     sets: [
       {
         weight: 150,
-        reps: 10
+        reps: 10,
+        complete: true
       },
       {
         weight: 150,
-        reps: 10
+        reps: 10,
+        complete: true
       },{
         weight: 150,
-        reps: 10
+        reps: 10,
+        complete: false
       }
     ]
   }

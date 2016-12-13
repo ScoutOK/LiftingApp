@@ -62,6 +62,15 @@ const styles = StyleSheet.create({
     borderBottomRightRadius: 4,
     borderBottomLeftRadius: 4,
   },
+  setHead: {
+    borderBottomWidth : 2,
+    borderBottomColor : darker,
+  },
+  setHeadText: {
+    textAlign: 'center',
+    flex: 1,
+    fontWeight: 'bold',
+  },
   setRow: {
     flexDirection: 'row',
     flex: 1
