@@ -14,17 +14,18 @@ const styles = StyleSheet.create({
   },
   topBar: {
     backgroundColor: darker,
-    padding: 5
+    padding: 5,
   },
   topSpacer: {
     height: 22,
   },
   mainBlock: {
     backgroundColor: middle,
+    flex: 5
   },
   actionBar: {
     backgroundColor: darker,
-    padding: 5
+    padding: 5,
   },
   topBottom: {
     flex: 1

@@ -2,7 +2,7 @@
 import React, {Component} from 'react';
 import ReactNative from 'react-native';
 const styles = require('../style.js')
-const {Text, View, ScrollView, ProgressViewIOS, ListView} = ReactNative;
+const {Text, View, ProgressViewIOS, ListView} = ReactNative;
 const Exercise = require('./Exercise');
 
 class Workout extends Component {
@@ -17,7 +17,7 @@ class Workout extends Component {
   render() {
     const progNum = 0.5
     return (
-      <ScrollView style={styles.workoutView}>
+      <View style={styles.workoutView}>
         <Text>Free Workout</Text>
         <Text>December 12, 2016</Text>
         <ProgressViewIOS style={styles.woProgress} progressViewStyle="bar"
@@ -27,7 +27,7 @@ class Workout extends Component {
           dataSource = {this.state.dataSource}
           renderRow={Exercise}
         />
-      </ScrollView>
+      </View>
     )
   }
 }

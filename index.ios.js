@@ -8,7 +8,8 @@ import React, { Component } from 'react';
 import {
   AppRegistry,
   Text,
-  View
+  View,
+  ScrollView
 } from 'react-native';
 const TopBanner = require('./components/TopBanner');
 const ActionBar = require('./components/ActionBar');
@@ -20,9 +21,9 @@ export default class LiftingApp extends Component {
     return (
       <View style={styles.container}>
         <TopBanner style={styles.topBottom}/>
-        <View style={styles.mainBlock}>
+        <ScrollView style={styles.mainBlock}>
           <Workout />
-        </View>
+        </ScrollView>
         <ActionBar style={styles.topBottom}/>
       </View>
     );
