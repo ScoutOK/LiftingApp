@@ -25,6 +25,14 @@ const styles = StyleSheet.create({
   },
   topBottom: {
     flex: 1
+  },
+  workoutView: {
+    backgroundColor: '#eee',
+    padding: 10
+  },
+  woProgress: {
+    backgroundColor: '#333',
+    height: 10,
   }
 });
 
