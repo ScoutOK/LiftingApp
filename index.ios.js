@@ -17,10 +17,12 @@ const styles = require('./style.js');
 export default class LiftingApp extends Component {
   render() {
     return (
-      <View>
-        <TopBanner/>
-        <Text>Main Content</Text>
-        <ActionBar/>
+      <View style={styles.container}>
+        <TopBanner style={styles.topBottom}/>
+        <View style={styles.mainBlock}>
+          <Text>Main Content</Text>
+        </View>
+        <ActionBar style={styles.topBottom}/>
       </View>
     );
   }

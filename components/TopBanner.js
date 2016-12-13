@@ -7,8 +7,11 @@ const {Text, View} = ReactNative;
 class TopBanner extends Component {
   render() {
     return (
-      <View>
-        <Text style={styles.topBar}>Lifting App</Text>
+      <View style={styles.topBar}>
+        <View style={styles.topSpacer}/>
+        <View>
+          <Text>Lifting App</Text>
+        </View>
       </View>
     );
   }

@@ -3,12 +3,29 @@
 import {StyleSheet} from 'react-native';
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    flexDirection: 'column',
+    justifyContent: 'space-between',
+    backgroundColor: 'skyblue',
+  },
   topBar: {
-    backgroundColor: 'red',
-    position: 'absolute',
-    top: 0
+    backgroundColor: 'steelblue',
+    padding: 5
+  },
+  topSpacer: {
+    height: 22,
   },
   mainBlock: {
-    backgroundColor: 'blue',
+    backgroundColor: 'skyblue',
+  },
+  actionBar: {
+    backgroundColor: 'steelblue',
+    padding: 5
+  },
+  topBottom: {
+    flex: 1
   }
 });
+
+module.exports = styles;

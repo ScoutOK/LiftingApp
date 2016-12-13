@@ -7,7 +7,7 @@ const {Text, View} = ReactNative;
 class ActionBar extends Component {
   render() {
     return (
-      <View>
+      <View style={styles.actionBar}>
         <Text>Dis da bottom</Text>
       </View>
     );
