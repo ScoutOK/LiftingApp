@@ -41,6 +41,9 @@ const styles = StyleSheet.create({
   exerRow: {
     marginTop: 10,
     marginBottom: 10,
+    shadowColor: 'black',
+    shadowRadius: 10,
+    shadowOpacity: 1
   },
   exerciseHead: {
     fontWeight: 'bold',
