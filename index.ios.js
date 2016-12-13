@@ -21,7 +21,6 @@ export default class LiftingApp extends Component {
       <View style={styles.container}>
         <TopBanner style={styles.topBottom}/>
         <View style={styles.mainBlock}>
-          <Text>Main Content</Text>
           <Workout />
         </View>
         <ActionBar style={styles.topBottom}/>

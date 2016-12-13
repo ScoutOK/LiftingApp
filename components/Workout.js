@@ -17,7 +17,7 @@ class Workout extends Component {
     const progNum = 0.5
     return (
       <ScrollView style={styles.workoutView}>
-        <Text>Workout Title</Text>
+        <Text>Free Workout</Text>
         <Text>December 12, 2016</Text>
         <ProgressViewIOS style={styles.woProgress} progressViewStyle="bar"
           progress={progNum}
@@ -32,13 +32,41 @@ class Workout extends Component {
 }
 
 const exerRow = (exercise, sectionId, rowId) => {
-const rowNum = parseNum()
-return (
-  <View>
-    <Text>Exercise {rowId+1}</Text>
-    <Text>{exercise.name}</Text>
-  </View>
-)}
+  const rowNum = Number(rowId) + 1
+  const ds2 = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
+  const setData = ds2.cloneWithRows(exercise.sets);
+  return (
+    <View style={styles.exerRow}>
+      <View style={styles.exerTop}>
+        <Text style={styles.exerciseHead}>Exercise {rowNum}</Text>
+        <Text>{exercise.name}</Text>
+      </View>
+      <ListView
+        dataSource = {setData}
+        renderRow = {setRow}
+        renderSeparator={(sectionId, rowId) => <View key={rowId} style={styles.minorSeparator} />}
+        style={styles.setTable}
+      />
+    </View>
+  )
+}
+
+const setRow = (set, sectionId, rowId) => {
+  const rowNum = Number(rowId) + 1
+  return(
+    <View style={styles.setRow}>
+      <View style={styles.setCell}>
+        <Text style={styles.setCellText}>{rowNum}</Text>
+      </View>
+      <View style={styles.setCell, styles.flex2}>
+        <Text style={styles.setCellText}>{set.weight}lbs</Text>
+      </View>
+      <View style={styles.setCell, styles.flex2}>
+        <Text style={styles.setCellText}>{set.reps}</Text>
+      </View>
+    </View>
+  )
+}
 
 const dummyWorkout = [
   {
