@@ -14,6 +14,7 @@ import {
 const TopBanner = require('./components/TopBanner');
 const ActionBar = require('./components/ActionBar');
 const Workout = require('./components/Workout');
+const Front = require('./components/Front')
 const styles = require('./style.js');
 
 export default class LiftingApp extends Component {
@@ -22,6 +23,7 @@ export default class LiftingApp extends Component {
       <View style={styles.container}>
         <TopBanner style={styles.topBottom}/>
         <ScrollView style={styles.mainBlock}>
+          <Front />
           <Workout />
         </ScrollView>
         <ActionBar style={styles.topBottom}/>

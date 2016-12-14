@@ -155,6 +155,9 @@ const styles = StyleSheet.create({
   setFootRight: {
     flex: 1,
   },
+  frontView: {
+    backgroundColor: darkest,
+  },
   majorSeparator: {
     flex: 1,
     height: 1,
