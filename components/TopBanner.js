@@ -9,8 +9,8 @@ class TopBanner extends Component {
     return (
       <View style={styles.topBar}>
         <View style={styles.topSpacer}/>
-        <View>
-          <Text>Lifting App</Text>
+        <View style={styles.appTitleCont}>
+          <Text style={styles.appTitle}>Lifting App</Text>
         </View>
       </View>
     );

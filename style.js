@@ -2,6 +2,7 @@
 
 import {StyleSheet} from 'react-native';
 
+const darkest = 'midnightblue'
 const darker = 'steelblue'
 const middle = 'skyblue'
 
@@ -13,19 +14,35 @@ const styles = StyleSheet.create({
     backgroundColor: middle,
   },
   topBar: {
-    backgroundColor: darker,
+    backgroundColor: darkest,
     padding: 5,
   },
   topSpacer: {
     height: 22,
+  },
+  appTitleCont: {
+    flexDirection: 'row',
+  },
+  appTitle: {
+    color: 'white',
+    textAlign: 'center',
+    flex: 1,
+    fontWeight: 'bold',
   },
   mainBlock: {
     backgroundColor: middle,
     flex: 5
   },
   actionBar: {
-    backgroundColor: darker,
+    backgroundColor: darkest,
     padding: 5,
+    flexDirection: 'row',
+  },
+  actionText: {
+    color: 'white',
+    fontWeight: 'bold',
+    textAlign: 'center',
+    flex: 1,
   },
   topBottom: {
     flex: 1
@@ -36,10 +53,18 @@ const styles = StyleSheet.create({
   workoutHead: {
     margin: 10
   },
-  woProgress: {
-    backgroundColor: '#333',
+  woProgCont: {
+    backgroundColor: '#666',
     height: 10,
     marginTop: 10,
+    flexDirection: 'row',
+    borderRadius: 4,
+    borderWidth: 1,
+    borderColor: darkest,
+  },
+  woProgBar: {
+    backgroundColor: darker,
+    borderRadius: 4,
   },
   exerRow: {
     margin: 10,
@@ -49,18 +74,30 @@ const styles = StyleSheet.create({
     shadowOffset: {width: 0, height: 2},
     borderRadius: 4,
   },
-  exerciseHead: {
-    fontWeight: 'bold',
-  },
   exerTop: {
+    flexDirection: 'row',
     backgroundColor: middle,
     borderTopRightRadius: 4,
     borderTopLeftRadius: 4,
-    padding: 5,
     borderLeftWidth : 3,
     borderLeftColor : darker,
     borderBottomWidth : 2,
     borderBottomColor : darker,
+  },
+  exerHead: {
+    fontWeight: 'bold',
+    paddingLeft: 15,
+    paddingRight: 15,
+    paddingTop: 10,
+    paddingBottom: 10,
+    fontSize: 25,
+    color: darkest,
+  },
+  exerName: {
+    flex: 1,
+    fontWeight: 'bold',
+    fontSize: 15,
+    paddingTop: 15,
   },
   setTable: {
     borderRightWidth : StyleSheet.hairlineWidth,
@@ -85,7 +122,7 @@ const styles = StyleSheet.create({
   },
   setCell: {
     flex: 1,
-    padding: 5
+    padding: 10
   },
   setCellText: {
     textAlign: 'center',
@@ -100,6 +137,10 @@ const styles = StyleSheet.create({
     flex: 1,
     height: StyleSheet.hairlineWidth,
     backgroundColor: '#888',
+  },
+  rightTableBorder: {
+    borderRightColor: '#888',
+    borderRightWidth: StyleSheet.hairlineWidth,
   },
   flex2: {
     flex: 2
