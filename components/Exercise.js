@@ -16,27 +16,35 @@ const exerRow = (exercise, sectionId, rowId) => {
       <ListView
         dataSource = {setData}
         renderRow = {setRow}
-        renderSeparator={(sectionId, rowId) => <View key={rowId} style={styles.minorSeparator} />}
         renderHeader = {setRowHead}
         style={styles.setTable}
       />
+      <View style={styles.setFoot}>
+        <View style={styles.setFootLeft}></View>
+        <View style={styles.setFootContent}>
+          <Text style={styles.setFootContentText}>Total Volume: lbs</Text>
+        </View>
+        <View style={styles.setFootRight}></View>
+      </View>
     </View>
   )
 }
 
 const setRowHead = () => (
   <View style={[styles.setRow, styles.setHead]}>
-    <View style={styles.setCell}>
-      <Text style={styles.setHeadText}>Set</Text>
+    <View style={styles.setHeadCell}>
+      <Text style={styles.setHeadText}>SET</Text>
     </View>
-    <View style={[styles.setCell, styles.flex2]}>
-      <Text style={styles.setHeadText}>Weight</Text>
+    <View style={[styles.setHeadCell, styles.flex3]}>
+      <Text style={styles.setHeadText}>PREVIOUS</Text>
     </View>
-    <View style={[styles.setCell, styles.flex2]}>
-      <Text style={styles.setHeadText}>Reps</Text>
+    <View style={[styles.setHeadCell, styles.flex3]}>
+      <Text style={styles.setHeadText}>WEIGHT</Text>
     </View>
-    <View style={styles.setCell}>
-      <Text style={styles.setHeadText}>Done</Text>
+    <View style={[styles.setHeadCell, styles.flex3]}>
+      <Text style={styles.setHeadText}>REPS</Text>
+    </View>
+    <View style={styles.setHeadCell}>
     </View>
   </View>
 )
@@ -45,13 +53,16 @@ const setRow = (set, sectionId, rowId) => {
   const rowNum = Number(rowId) + 1
   return(
     <View style={styles.setRow}>
-      <View style={[styles.setCell, styles.rightTableBorder]}>
-        <Text style={styles.setCellText}>{rowNum}</Text>
+      <View style={[styles.setCell, styles.setNum]}>
+        <Text style={styles.setNumText}>{rowNum}</Text>
       </View>
-      <View style={[styles.setCell, styles.flex2, styles.rightTableBorder]}>
+      <View style={[styles.setCell, styles.flex3]}>
+        <Text style={styles.setCellText}></Text>
+      </View>
+      <View style={[styles.setCell, styles.flex3]}>
         <Text style={styles.setCellText}>{set.weight}lbs</Text>
       </View>
-      <View style={[styles.setCell, styles.flex2, styles.rightTableBorder]}>
+      <View style={[styles.setCell, styles.flex3]}>
         <Text style={styles.setCellText}>{set.reps}</Text>
       </View>
       <View style={styles.setCell}>
