@@ -54,7 +54,7 @@ const styles = StyleSheet.create({
     margin: 10
   },
   woProgCont: {
-    backgroundColor: '#666',
+    backgroundColor: '#999',
     height: 10,
     marginTop: 10,
     flexDirection: 'row',
@@ -67,20 +67,19 @@ const styles = StyleSheet.create({
     borderRadius: 4,
   },
   exerRow: {
-    margin: 10,
+    marginBottom: 10,
+    marginTop: 10,
     shadowColor: '#333',
-    shadowRadius: 2,
-    shadowOpacity: 1,
-    shadowOffset: {width: 0, height: 2},
-    borderRadius: 4,
+    shadowRadius: 4,
+    shadowOpacity: .4,
+    shadowOffset: {width: 0, height: 5},
+    // borderRadius: 4,
   },
   exerTop: {
     flexDirection: 'row',
     backgroundColor: middle,
     borderTopRightRadius: 4,
     borderTopLeftRadius: 4,
-    borderLeftWidth : 3,
-    borderLeftColor : darker,
     borderBottomWidth : 2,
     borderBottomColor : darker,
   },
@@ -100,25 +99,34 @@ const styles = StyleSheet.create({
     paddingTop: 15,
   },
   setTable: {
-    borderRightWidth : StyleSheet.hairlineWidth,
-    borderLeftWidth : 3,
-    borderRightColor : '#888',
-    borderLeftColor : darker,
-    borderBottomRightRadius: 4,
-    borderBottomLeftRadius: 4,
+    // borderBottomRightRadius: 4,
+    // borderBottomLeftRadius: 4,
   },
   setHead: {
     borderBottomWidth : 2,
     borderBottomColor : darker,
   },
+  setHeadCell: {
+    flex: 1,
+    padding: 5
+  },
   setHeadText: {
     textAlign: 'center',
     flex: 1,
-    fontWeight: 'bold',
+    fontSize:12,
   },
   setRow: {
     flexDirection: 'row',
     flex: 1
+  },
+  setNum: {
+    backgroundColor: darker,
+  },
+  setNumText: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    textAlign: 'center',
+    color: '#eee'
   },
   setCell: {
     flex: 1,
@@ -128,6 +136,25 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     flex: 1
   },
+  setFoot: {
+    flex: 1,
+    backgroundColor: darker,
+    flexDirection: 'row',
+  },
+  setFootLeft: {
+    flex: 4,
+  },
+  setFootContent: {
+    flex: 6,
+    padding: 5,
+  },
+  setFootContentText: {
+    flex: 1,
+    textAlign: 'right',
+  },
+  setFootRight: {
+    flex: 1,
+  },
   majorSeparator: {
     flex: 1,
     height: 1,
@@ -136,7 +163,7 @@ const styles = StyleSheet.create({
   minorSeparator: {
     flex: 1,
     height: StyleSheet.hairlineWidth,
-    backgroundColor: '#888',
+    backgroundColor: darker,
   },
   rightTableBorder: {
     borderRightColor: '#888',
