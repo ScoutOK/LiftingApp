@@ -21,9 +21,10 @@ class Workout extends Component {
         <View style={styles.workoutHead}>
           <Text>Free Workout</Text>
           <Text>December 12, 2016</Text>
-          <ProgressViewIOS style={styles.woProgress} progressViewStyle="bar"
-            progress={progNum}
-          />
+          <View style={styles.woProgCont}>
+            <View style={[styles.woProgBar, {flex: prog}]} />
+            <View style={{flex: rest}} />
+          </View>
         </View>
         <ListView
           dataSource = {this.state.dataSource}
@@ -34,6 +35,9 @@ class Workout extends Component {
   }
 }
 
+//dummy data for progress meter
+const prog = 4/5;
+const rest = 1-prog;
 
 
 const dummyWorkout = [

@@ -8,7 +8,7 @@ class ActionBar extends Component {
   render() {
     return (
       <View style={styles.actionBar}>
-        <Text>Dis da bottom</Text>
+        <Text style={styles.actionText}>Dis da bottom</Text>
       </View>
     );
   }

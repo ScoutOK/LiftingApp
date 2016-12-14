@@ -10,8 +10,8 @@ const exerRow = (exercise, sectionId, rowId) => {
   return (
     <View style={styles.exerRow}>
       <View style={styles.exerTop}>
-        <Text style={styles.exerciseHead}>Exercise {rowNum}</Text>
-        <Text>{exercise.name}</Text>
+        <Text style={styles.exerHead}>{rowNum}</Text>
+        <Text style={styles.exerName}>{exercise.name}</Text>
       </View>
       <ListView
         dataSource = {setData}
@@ -45,13 +45,13 @@ const setRow = (set, sectionId, rowId) => {
   const rowNum = Number(rowId) + 1
   return(
     <View style={styles.setRow}>
-      <View style={styles.setCell}>
+      <View style={[styles.setCell, styles.rightTableBorder]}>
         <Text style={styles.setCellText}>{rowNum}</Text>
       </View>
-      <View style={[styles.setCell, styles.flex2]}>
+      <View style={[styles.setCell, styles.flex2, styles.rightTableBorder]}>
         <Text style={styles.setCellText}>{set.weight}lbs</Text>
       </View>
-      <View style={[styles.setCell, styles.flex2]}>
+      <View style={[styles.setCell, styles.flex2, styles.rightTableBorder]}>
         <Text style={styles.setCellText}>{set.reps}</Text>
       </View>
       <View style={styles.setCell}>
