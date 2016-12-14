@@ -7,6 +7,15 @@ const exerRow = (exercise, sectionId, rowId) => {
   const rowNum = Number(rowId) + 1
   const ds2 = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
   const setData = ds2.cloneWithRows(exercise.sets);
+  const calcVolume = (setGroup) => {
+    let total = 0
+    setGroup.forEach((set) => {
+      if (set.complete) {
+        total += set.weight * set.reps
+      }
+    })
+    return total
+  }
   return (
     <View style={styles.exerRow}>
       <View style={styles.exerTop}>
@@ -22,7 +31,7 @@ const exerRow = (exercise, sectionId, rowId) => {
       <View style={styles.setFoot}>
         <View style={styles.setFootLeft}></View>
         <View style={styles.setFootContent}>
-          <Text style={styles.setFootContentText}>Total Volume: lbs</Text>
+          <Text style={styles.setFootContentText}>Total Volume: {calcVolume(exercise.sets)}lbs</Text>
         </View>
         <View style={styles.setFootRight}></View>
       </View>
