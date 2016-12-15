@@ -2,9 +2,9 @@
 import React, {Component} from 'react';
 import ReactNative from 'react-native';
 const styles = require('../style.js')
-const {Text, View, ProgressViewIOS, ListView} = ReactNative;
+const {Text, View, ProgressViewIOS, ListView, TouchableHighlight} = ReactNative;
 
-class Front extends Component {
+export default class Front extends Component {
   constructor() {
     super();
   }
@@ -12,6 +12,10 @@ class Front extends Component {
     const progNum = 0.5
     return (
       <View style={styles.frontView}>
+        <Text>Welcome</Text>
+        <TouchableHighlight onPress={this.props.toWorkout}>
+          <Text>Start Workout</Text>
+        </TouchableHighlight>
       </View>
     )
   }
@@ -23,4 +27,3 @@ const dummyUser = {
   screenName: 'scoutok',
 }
 
-module.exports = Front;

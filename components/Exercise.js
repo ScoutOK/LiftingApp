@@ -3,7 +3,7 @@ import ReactNative from 'react-native';
 const styles = require('../style.js')
 const {Text, View, ScrollView, ProgressViewIOS, ListView} = ReactNative;
 
-const exerRow = (exercise, sectionId, rowId) => {
+export default exerRow = (exercise, sectionId, rowId) => {
   const rowNum = Number(rowId) + 1
   const ds2 = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
   const setData = ds2.cloneWithRows(exercise.sets);
@@ -80,5 +80,3 @@ const setRow = (set, sectionId, rowId) => {
     </View>
   )
 }
-
-module.exports = exerRow;

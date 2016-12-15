@@ -4,7 +4,7 @@ import ReactNative from 'react-native';
 const styles = require('../style.js')
 const {Text, View} = ReactNative;
 
-class TopBanner extends Component {
+export default class TopBanner extends Component {
   render() {
     return (
       <View style={styles.topBar}>
@@ -16,5 +16,3 @@ class TopBanner extends Component {
     );
   }
 }
-
-module.exports = TopBanner;

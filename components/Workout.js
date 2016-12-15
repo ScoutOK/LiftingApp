@@ -3,9 +3,9 @@ import React, {Component} from 'react';
 import ReactNative from 'react-native';
 const styles = require('../style.js')
 const {Text, View, ProgressViewIOS, ListView} = ReactNative;
-const Exercise = require('./Exercise');
+import Exercise from './Exercise';
 
-class Workout extends Component {
+export default class Workout extends Component {
   constructor() {
     super();
 
@@ -137,4 +137,3 @@ const dummyWorkout = [
   }
 ]
 
-module.exports = Workout
