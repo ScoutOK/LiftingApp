@@ -62,7 +62,9 @@ export default class LiftingApp extends Component {
               }
             }}
           />
-        <ActionBar style={styles.topBottom}/>
+        <ActionBar style={styles.topBottom} toHome={() => {
+                       Navigator.push(routes[1]);
+                     }}/>
       </View>
     );
   }

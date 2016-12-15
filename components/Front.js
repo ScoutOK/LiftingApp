@@ -1,9 +1,9 @@
 'use strict';
 import React, {Component} from 'react';
 import ReactNative from 'react-native';
-import {LightText} from './TextFormats';
+import {LightText, LightLarger} from './TextFormats';
 const styles = require('../style.js')
-const {Text, View, ProgressViewIOS, ListView, TouchableHighlight} = ReactNative;
+const {Text, View, ProgressViewIOS, ListView, TouchableHighlight, Image} = ReactNative;
 
 export default class Front extends Component {
   constructor() {
@@ -15,10 +15,29 @@ export default class Front extends Component {
   render() {
     return (
       <View style={styles.frontView}>
-        <LightText>Welcome {this.state.user.screenName}</LightText>
-        <TouchableHighlight onPress={this.props.toWorkout}>
+        <LightLarger>Welcome, {this.state.user.screenName}</LightLarger>
+        <Image
+          style={styles.profilePic}
+          source={require('../images/SoK.jpg')}
+        />
+        <TouchableHighlight onPress={this.props.toWorkout} style={styles.frontChoice}>
           <Text>
-            <LightText>Start Workout</LightText>
+            <LightLarger>Start Workout</LightLarger>
+          </Text>
+        </TouchableHighlight>
+        <TouchableHighlight style={styles.frontChoice}>
+          <Text>
+            <LightLarger>My Stats</LightLarger>
+          </Text>
+        </TouchableHighlight>
+        <TouchableHighlight style={styles.frontChoice}>
+          <Text>
+            <LightLarger>My Routines</LightLarger>
+          </Text>
+        </TouchableHighlight>
+        <TouchableHighlight style={styles.frontChoice}>
+          <Text>
+            <LightLarger>Exercises</LightLarger>
           </Text>
         </TouchableHighlight>
       </View>

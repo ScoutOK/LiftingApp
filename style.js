@@ -38,6 +38,9 @@ const styles = StyleSheet.create({
     padding: 5,
     flexDirection: 'row',
   },
+  actionItem: {
+    flex: 1,
+  },
   actionText: {
     color: 'white',
     fontWeight: 'bold',
@@ -156,6 +159,16 @@ const styles = StyleSheet.create({
   },
   frontView: {
     backgroundColor: darkest,
+    flexDirection: 'column',
+    flex: 1,
+  },
+  frontChoice: {
+    paddingLeft: 25,
+    paddingRight: 25,
+    flex: 1,
+    backgroundColor: darker,
+    borderColor: darkest,
+    borderWidth: 1,
   },
   majorSeparator: {
     flex: 1,
@@ -182,6 +195,15 @@ const styles = StyleSheet.create({
   },
   darkText: {
     color: 'black',
+  },
+  larger: {
+    fontSize: 25,
+  },
+  profilePic: {
+    height: 150,
+    width: 150,
+    borderRadius: 75,
+    margin: 10,
   }
 });
 

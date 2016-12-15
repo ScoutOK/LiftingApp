@@ -23,3 +23,13 @@ export class DarkText extends Component {
     )
   }
 }
+
+export class LightLarger extends Component {
+  render() {
+    return (
+      <Text style={[styles.lightText, styles.larger]}>
+        {this.props.children}
+      </Text>
+    )
+  }
+}
