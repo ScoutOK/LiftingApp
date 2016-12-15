@@ -4,6 +4,7 @@ import ReactNative from 'react-native';
 const styles = require('../style.js')
 const {Text, View, ProgressViewIOS, ListView} = ReactNative;
 import Exercise from './Exercise';
+import {LightText, DarkText} from './TextFormats';
 
 export default class Workout extends Component {
   constructor() {
@@ -19,8 +20,8 @@ export default class Workout extends Component {
     return (
       <View style={styles.workoutView}>
         <View style={styles.workoutHead}>
-          <Text>Free Workout</Text>
-          <Text>December 12, 2016</Text>
+          <DarkText>Free Workout</DarkText>
+          <DarkText>December 12, 2016</DarkText>
           <View style={styles.woProgCont}>
             <View style={[styles.woProgBar, {flex: prog}]} />
             <View style={{flex: rest}} />

@@ -126,7 +126,6 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: 'bold',
     textAlign: 'center',
-    color: '#eee'
   },
   setCell: {
     flex: 1,
@@ -173,11 +172,17 @@ const styles = StyleSheet.create({
     borderRightWidth: StyleSheet.hairlineWidth,
   },
   flex2: {
-    flex: 2
+    flex: 2,
   },
   flex3: {
-    flex: 3
+    flex: 3,
   },
+  lightText: {
+    color: '#eee',
+  },
+  darkText: {
+    color: 'black',
+  }
 });
 
 module.exports = styles;
