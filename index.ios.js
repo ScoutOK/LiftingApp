@@ -10,7 +10,8 @@ import {
   Text,
   View,
   ScrollView,
-  Navigator
+  Navigator,
+  StatusBar
 } from 'react-native';
 
 //Components
@@ -29,6 +30,9 @@ export default class LiftingApp extends Component {
   ];
     return (
       <View style={styles.container}>
+        <StatusBar
+           barStyle="light-content"
+         />
         <TopBanner style={styles.topBottom}/>
           <Navigator
             initialRoute={routes[0]}
