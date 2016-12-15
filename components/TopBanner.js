@@ -3,18 +3,17 @@ import React, {Component} from 'react';
 import ReactNative from 'react-native';
 const styles = require('../style.js')
 const {Text, View} = ReactNative;
+import {LightText, DarkText} from './TextFormats';
 
-class TopBanner extends Component {
+export default class TopBanner extends Component {
   render() {
     return (
       <View style={styles.topBar}>
         <View style={styles.topSpacer}/>
         <View style={styles.appTitleCont}>
-          <Text style={styles.appTitle}>Lifting App</Text>
+          <LightText style={styles.appTitle}>Lifting App</LightText>
         </View>
       </View>
     );
   }
 }
-
-module.exports = TopBanner;

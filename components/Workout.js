@@ -3,9 +3,10 @@ import React, {Component} from 'react';
 import ReactNative from 'react-native';
 const styles = require('../style.js')
 const {Text, View, ProgressViewIOS, ListView} = ReactNative;
-const Exercise = require('./Exercise');
+import Exercise from './Exercise';
+import {LightText, DarkText} from './TextFormats';
 
-class Workout extends Component {
+export default class Workout extends Component {
   constructor() {
     super();
 
@@ -19,8 +20,8 @@ class Workout extends Component {
     return (
       <View style={styles.workoutView}>
         <View style={styles.workoutHead}>
-          <Text>Free Workout</Text>
-          <Text>December 12, 2016</Text>
+          <DarkText>Free Workout</DarkText>
+          <DarkText>December 12, 2016</DarkText>
           <View style={styles.woProgCont}>
             <View style={[styles.woProgBar, {flex: prog}]} />
             <View style={{flex: rest}} />
@@ -137,4 +138,3 @@ const dummyWorkout = [
   }
 ]
 
-module.exports = Workout

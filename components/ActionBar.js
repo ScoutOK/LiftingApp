@@ -2,16 +2,40 @@
 import React, {Component} from 'react';
 import ReactNative from 'react-native';
 const styles = require('../style.js')
-const {Text, View} = ReactNative;
+const {Text, View, TouchableHighlight, Navigator} = ReactNative;
+import {LightText, DarkText} from './TextFormats';
 
-class ActionBar extends Component {
+export default class ActionBar extends Component {
   render() {
     return (
       <View style={styles.actionBar}>
-        <Text style={styles.actionText}>Dis da bottom</Text>
+        <TouchableHighlight onPress={this.props.toHome} style={styles.actionItem}>
+          <Text>
+            <LightText>Home</LightText>
+          </Text>
+        </TouchableHighlight>
+        <TouchableHighlight onPress={this.props.toHome} style={styles.actionItem}>
+          <Text>
+            <LightText>Thing 2</LightText>
+          </Text>
+        </TouchableHighlight>
+        <TouchableHighlight onPress={this.props.toHome} style={styles.actionItem}>
+          <Text>
+            <LightText>Thing 3</LightText>
+          </Text>
+        </TouchableHighlight>
+        <TouchableHighlight onPress={this.props.toHome} style={styles.actionItem}>
+          <Text>
+            <LightText>Thing 4</LightText>
+          </Text>
+        </TouchableHighlight>
+        <TouchableHighlight onPress={this.props.toHome} style={styles.actionItem}>
+          <Text>
+            <LightText>Thing 5</LightText>
+          </Text>
+        </TouchableHighlight>
       </View>
     );
   }
 }
 
-module.exports = ActionBar;

@@ -2,8 +2,9 @@ import React, {Component} from 'react';
 import ReactNative from 'react-native';
 const styles = require('../style.js')
 const {Text, View, ScrollView, ProgressViewIOS, ListView} = ReactNative;
+import {LightText, DarkText} from './TextFormats';
 
-const exerRow = (exercise, sectionId, rowId) => {
+export default exerRow = (exercise, sectionId, rowId) => {
   const rowNum = Number(rowId) + 1
   const ds2 = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
   const setData = ds2.cloneWithRows(exercise.sets);
@@ -20,7 +21,7 @@ const exerRow = (exercise, sectionId, rowId) => {
     <View style={styles.exerRow}>
       <View style={styles.exerTop}>
         <Text style={styles.exerHead}>{rowNum}</Text>
-        <Text style={styles.exerName}>{exercise.name}</Text>
+        <DarkText style={styles.exerName}>{exercise.name}</DarkText>
       </View>
       <ListView
         dataSource = {setData}
@@ -31,7 +32,7 @@ const exerRow = (exercise, sectionId, rowId) => {
       <View style={styles.setFoot}>
         <View style={styles.setFootLeft}></View>
         <View style={styles.setFootContent}>
-          <Text style={styles.setFootContentText}>Total Volume: {calcVolume(exercise.sets)}lbs</Text>
+          <LightText style={styles.setFootContentText}>Total Volume: {calcVolume(exercise.sets)}lbs</LightText>
         </View>
         <View style={styles.setFootRight}></View>
       </View>
@@ -42,16 +43,16 @@ const exerRow = (exercise, sectionId, rowId) => {
 const setRowHead = () => (
   <View style={[styles.setRow, styles.setHead]}>
     <View style={styles.setHeadCell}>
-      <Text style={styles.setHeadText}>SET</Text>
+      <DarkText style={styles.setHeadText}>SET</DarkText>
     </View>
     <View style={[styles.setHeadCell, styles.flex3]}>
-      <Text style={styles.setHeadText}>PREVIOUS</Text>
+      <DarkText style={styles.setHeadText}>PREVIOUS</DarkText>
     </View>
     <View style={[styles.setHeadCell, styles.flex3]}>
-      <Text style={styles.setHeadText}>WEIGHT</Text>
+      <DarkText style={styles.setHeadText}>WEIGHT</DarkText>
     </View>
     <View style={[styles.setHeadCell, styles.flex3]}>
-      <Text style={styles.setHeadText}>REPS</Text>
+      <DarkText style={styles.setHeadText}>REPS</DarkText>
     </View>
     <View style={styles.setHeadCell}>
     </View>
@@ -63,22 +64,20 @@ const setRow = (set, sectionId, rowId) => {
   return(
     <View style={styles.setRow}>
       <View style={[styles.setCell, styles.setNum]}>
-        <Text style={styles.setNumText}>{rowNum}</Text>
+        <LightText style={styles.setNumText}>{rowNum}</LightText>
       </View>
       <View style={[styles.setCell, styles.flex3]}>
-        <Text style={styles.setCellText}></Text>
+        <DarkText style={styles.setCellText}></DarkText>
       </View>
       <View style={[styles.setCell, styles.flex3]}>
-        <Text style={styles.setCellText}>{set.weight}lbs</Text>
+        <DarkText style={styles.setCellText}>{set.weight}lbs</DarkText>
       </View>
       <View style={[styles.setCell, styles.flex3]}>
-        <Text style={styles.setCellText}>{set.reps}</Text>
+        <DarkText style={styles.setCellText}>{set.reps}</DarkText>
       </View>
       <View style={styles.setCell}>
-        <Text style={styles.setCellText}>{set.complete ? 'yes' : 'no'}</Text>
+        <DarkText style={styles.setCellText}>{set.complete ? 'yes' : 'no'}</DarkText>
       </View>
     </View>
   )
 }
-
-module.exports = exerRow;
