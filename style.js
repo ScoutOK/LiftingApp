@@ -170,7 +170,8 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: darker,
     borderColor: darkest,
-    borderWidth: 1,
+    borderTopWidth: 1,
+    borderBottomWidth: 1,
   },
   majorSeparator: {
     flex: 1,
