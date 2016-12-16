@@ -16,26 +16,28 @@ export default class Front extends Component {
     return (
       <View style={styles.frontView}>
         <LightLarger>Welcome, {this.state.user.screenName}</LightLarger>
-        <Image
-          style={styles.profilePic}
-          source={require('../images/SoK.jpg')}
-        />
-        <TouchableHighlight onPress={this.props.toWorkout} style={styles.frontChoice}>
+        <View style={styles.centerHoriz}>
+          <Image
+            style={styles.profilePic}
+            source={require('../images/SoK.jpg')}
+          />
+        </View>
+        <TouchableHighlight onPress={this.props.toWorkout} style={[styles.frontChoice, styles.centerVert]}>
           <Text>
             <LightLarger>Start Workout</LightLarger>
           </Text>
         </TouchableHighlight>
-        <TouchableHighlight style={styles.frontChoice}>
+        <TouchableHighlight style={[styles.frontChoice, styles.centerVert]}>
           <Text>
             <LightLarger>My Stats</LightLarger>
           </Text>
         </TouchableHighlight>
-        <TouchableHighlight style={styles.frontChoice}>
+        <TouchableHighlight style={[styles.frontChoice, styles.centerVert]}>
           <Text>
             <LightLarger>My Routines</LightLarger>
           </Text>
         </TouchableHighlight>
-        <TouchableHighlight style={styles.frontChoice}>
+        <TouchableHighlight style={[styles.frontChoice, styles.centerVert]}>
           <Text>
             <LightLarger>Exercises</LightLarger>
           </Text>
