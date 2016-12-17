@@ -202,6 +202,9 @@ export default styles = StyleSheet.create({
     padding: 10,
     justifyContent: 'space-between'
   },
+  flex1: {
+    flex: 1,
+  },
   flex2: {
     flex: 2,
   },

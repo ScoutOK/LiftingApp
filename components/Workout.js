@@ -11,6 +11,21 @@ import {LightText, DarkText} from './TextFormats';
 //component
 import Exercise from './Exercise';
 
+const doneRatio = (workout) => {
+  let total = 0;
+  let complete = 0;
+  for (let key in workout) {
+    workout[key].sets.forEach((set)=>{
+      total += 1
+      if (set.complete) {
+        complete += 1
+      }
+    }
+    )
+  }
+  return complete/total
+}
+
 
 export default class Workout extends Component {
   constructor() {
@@ -19,6 +34,7 @@ export default class Workout extends Component {
     const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
     this.state = {
       dataSource: ds.cloneWithRows(dummyWorkout),
+      progress: doneRatio(dummyWorkout),
     };
   }
   render() {
@@ -28,8 +44,8 @@ export default class Workout extends Component {
           <DarkText>Free Workout</DarkText>
           <DarkText>December 12, 2016</DarkText>
           <View style={styles.woProgCont}>
-            <View style={[styles.woProgBar, {flex: prog}]} />
-            <View style={{flex: rest}} />
+            <View style={[styles.woProgBar, {flex: this.state.progress}]} />
+            <View style={{flex: 1-this.state.progress}} />
           </View>
         </View>
         <ListView
@@ -40,11 +56,6 @@ export default class Workout extends Component {
     )
   }
 }
-
-//dummy data for progress meter
-const prog = 4/5;
-const rest = 1-prog;
-
 
 const dummyWorkout = [
   {

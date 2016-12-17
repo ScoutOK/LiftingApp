@@ -45,13 +45,13 @@ export default class Catalog extends Component {
             if(this.state.search.toLowerCase() == exercise.name.substring(0, searchLength).toLowerCase()) {
               return (
                 <View style={styles.catalogRow}>
-                  <View>
+                  <View style={styles.flex3}>
                     <Text>{exercise.name}</Text>
                   </View>
-                  <View>
+                  <View style={styles.flex1}>
                     <Text>Details</Text>
                   </View>
-                  <View>
+                  <View style={styles.flex1}>
                     <Text>Add</Text>
                   </View>
                 </View>
