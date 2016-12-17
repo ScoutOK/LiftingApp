@@ -21,6 +21,7 @@ export default class Catalog extends Component {
     const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
     this.state = {
       dataSource: ds.cloneWithRows(dummyExercises),
+      search: '',
     };
   }
   render() {
@@ -30,18 +31,32 @@ export default class Catalog extends Component {
           <DarkText>Exercises</DarkText>
           <TextInput
             style={styles.searchBox}
-            onChangeText={(text) => this.setState({text})}
+            onChangeText={(text) => {
+              this.setState({search: text})
+            }}
             value={this.state.text}
           />
         </View>
         <ListView
           dataSource = {this.state.dataSource}
           renderRow={(exercise, sectionId, rowId) => {
-            return (
-              <View>
-                <Text>{exercise.name}</Text>
-              </View>
-            )
+            let searchLength = this.state.search.length
+            console.log(this.state.search)
+            if(this.state.search.toLowerCase() == exercise.name.substring(0, searchLength).toLowerCase()) {
+              return (
+                <View style={styles.catalogRow}>
+                  <View>
+                    <Text>{exercise.name}</Text>
+                  </View>
+                  <View>
+                    <Text>Details</Text>
+                  </View>
+                  <View>
+                    <Text>Add</Text>
+                  </View>
+                </View>
+              )
+            }
           }}
         />
       </View>

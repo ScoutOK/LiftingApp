@@ -193,7 +193,14 @@ export default styles = StyleSheet.create({
     height: 40,
     borderColor: darker,
     borderRadius: 4,
-    borderWidth: thin
+    borderWidth: thin,
+    paddingLeft: 10,
+    paddingRight: 10,
+  },
+  catalogRow: {
+    flexDirection: 'row',
+    padding: 10,
+    justifyContent: 'space-between'
   },
   flex2: {
     flex: 2,
