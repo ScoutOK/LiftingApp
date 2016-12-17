@@ -24,6 +24,7 @@ export default styles = StyleSheet.create({
   },
   appTitleCont: {
     flexDirection: 'row',
+    justifyContent: 'center'
   },
   appTitle: {
     color: whitish,
@@ -194,7 +195,7 @@ export default styles = StyleSheet.create({
     flex: 3,
   },
   lightText: {
-    color: '#eee',
+    color: whitish,
   },
   darkText: {
     color: blackish,
@@ -215,6 +216,9 @@ export default styles = StyleSheet.create({
   centerVert: {
     flexDirection: 'column',
     justifyContent: 'center',
+  },
+  bold: {
+    fontWeight: 'bold',
   }
 });
 
