@@ -8,7 +8,7 @@ const middle = 'skyblue'
 const whitish = '#eee'
 const blackish = '#151515'
 
-const styles = StyleSheet.create({
+export default styles = StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: 'column',
@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   topBottom: {
-    flex: 1
+
   },
   workoutView: {
     backgroundColor: '#eee',
@@ -218,4 +218,3 @@ const styles = StyleSheet.create({
   }
 });
 
-module.exports = styles;

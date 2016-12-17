@@ -1,8 +1,7 @@
 'use strict';
 import React, {Component} from 'react';
-import ReactNative from 'react-native';
-const styles = require('../style.js')
-const {Text, View, ProgressViewIOS, ListView} = ReactNative;
+import styles from '../style.js'
+import {Text, View, ProgressViewIOS, ListView} from 'react-native';
 import Exercise from './Exercise';
 import {LightText, DarkText} from './TextFormats';
 
