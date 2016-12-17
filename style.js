@@ -2,11 +2,12 @@
 
 import {StyleSheet} from 'react-native';
 
-const darkest = 'midnightblue'
-const darker = 'steelblue'
-const middle = 'skyblue'
-const whitish = '#eee'
-const blackish = '#151515'
+const darkest = 'midnightblue';
+const darker = 'steelblue';
+const middle = 'skyblue';
+const whitish = '#eee';
+const blackish = '#151515';
+const thin = StyleSheet.hairlineWidth;
 
 export default styles = StyleSheet.create({
   container: {
@@ -181,12 +182,18 @@ export default styles = StyleSheet.create({
   },
   minorSeparator: {
     flex: 1,
-    height: StyleSheet.hairlineWidth,
+    height: thin,
     backgroundColor: darker,
   },
   rightTableBorder: {
     borderRightColor: '#888',
-    borderRightWidth: StyleSheet.hairlineWidth,
+    borderRightWidth: thin,
+  },
+  searchBox: {
+    height: 40,
+    borderColor: darker,
+    borderRadius: 4,
+    borderWidth: thin
   },
   flex2: {
     flex: 2,

@@ -1,18 +1,22 @@
+//react
 import React, { Component } from 'react';
 import {
   Text,
   View,
   ScrollView,
-  Navigator,
-  StatusBar
 } from 'react-native';
+
+//redux
+import { connect } from 'react-redux';
+
+//styles
 import styles from '../style.js'
 import {LightText, DarkText} from './TextFormats';
 
 //main section components
 import Workout from './Workout';
 import Front from './Front';
-import { connect } from 'react-redux';
+import Catalog from './Catalog'
 
 export class ViewSwitcher extends Component {
   render () {
@@ -20,6 +24,13 @@ export class ViewSwitcher extends Component {
       return (
         <ScrollView style={styles.mainBlock}>
           <Workout/>
+        </ScrollView>
+      )
+    }
+    if(this.props.route == 'CATALOG') {
+      return (
+        <ScrollView style={styles.mainBlock}>
+          <Catalog/>
         </ScrollView>
       )
     }

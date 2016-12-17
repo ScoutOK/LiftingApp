@@ -1,9 +1,16 @@
 'use strict';
+
+//react
 import React, {Component} from 'react';
+import {Text, View, ListView} from 'react-native';
+
+//style
 import styles from '../style.js'
-import {Text, View, ProgressViewIOS, ListView} from 'react-native';
-import Exercise from './Exercise';
 import {LightText, DarkText} from './TextFormats';
+
+//component
+import Exercise from './Exercise';
+
 
 export default class Workout extends Component {
   constructor() {
@@ -15,7 +22,6 @@ export default class Workout extends Component {
     };
   }
   render() {
-    const progNum = 0.5
     return (
       <View style={styles.workoutView}>
         <View style={styles.workoutHead}>
