@@ -1,8 +1,7 @@
 'use strict';
 import React, {Component} from 'react';
-import ReactNative from 'react-native';
-const styles = require('../style.js')
-const {Text, View} = ReactNative;
+import styles from '../style.js'
+import {Text, View} from 'react-native';
 import {LightText, DarkText} from './TextFormats';
 
 export default class TopBanner extends Component {

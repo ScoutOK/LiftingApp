@@ -5,8 +5,10 @@ import {StyleSheet} from 'react-native';
 const darkest = 'midnightblue'
 const darker = 'steelblue'
 const middle = 'skyblue'
+const whitish = '#eee'
+const blackish = '#151515'
 
-const styles = StyleSheet.create({
+export default styles = StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: 'column',
@@ -24,7 +26,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
   },
   appTitle: {
-    color: 'white',
+    color: whitish,
     textAlign: 'center',
     flex: 1,
     fontWeight: 'bold',
@@ -42,13 +44,13 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   actionText: {
-    color: 'white',
+    color: whitish,
     fontWeight: 'bold',
     textAlign: 'center',
     flex: 1,
   },
   topBottom: {
-    flex: 1
+
   },
   workoutView: {
     backgroundColor: '#eee',
@@ -168,7 +170,8 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: darker,
     borderColor: darkest,
-    borderWidth: 1,
+    borderTopWidth: 1,
+    borderBottomWidth: 1,
   },
   majorSeparator: {
     flex: 1,
@@ -194,7 +197,7 @@ const styles = StyleSheet.create({
     color: '#eee',
   },
   darkText: {
-    color: 'black',
+    color: blackish,
   },
   larger: {
     fontSize: 25,
@@ -204,7 +207,14 @@ const styles = StyleSheet.create({
     width: 150,
     borderRadius: 75,
     margin: 10,
+  },
+  centerHoriz: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+  },
+  centerVert: {
+    flexDirection: 'column',
+    justifyContent: 'center',
   }
 });
 
-module.exports = styles;

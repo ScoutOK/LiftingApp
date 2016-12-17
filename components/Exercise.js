@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import ReactNative from 'react-native';
-const styles = require('../style.js')
-const {Text, View, ScrollView, ProgressViewIOS, ListView} = ReactNative;
+import styles from '../style.js'
+import {Text, View, ScrollView, ProgressViewIOS, ListView} from 'react-native';
 import {LightText, DarkText} from './TextFormats';
 
 export default exerRow = (exercise, sectionId, rowId) => {

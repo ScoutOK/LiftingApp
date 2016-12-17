@@ -1,11 +1,13 @@
 'use strict';
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import ReactNative from 'react-native';
-import {LightText, LightLarger} from './TextFormats';
-const styles = require('../style.js')
-const {Text, View, ProgressViewIOS, ListView, TouchableHighlight, Image} = ReactNative;
+import { connect } from 'react-redux';
+import { LightText, LightLarger } from './TextFormats';
+import styles from '../style.js'
+import { Text, View, ProgressViewIOS, ListView, TouchableHighlight, Image } from 'react-native';
+import { goPlace } from '../reducers/route'
 
-export default class Front extends Component {
+export class Front extends Component {
   constructor() {
     super();
     this.state = {
@@ -16,26 +18,28 @@ export default class Front extends Component {
     return (
       <View style={styles.frontView}>
         <LightLarger>Welcome, {this.state.user.screenName}</LightLarger>
-        <Image
-          style={styles.profilePic}
-          source={require('../images/SoK.jpg')}
-        />
-        <TouchableHighlight onPress={this.props.toWorkout} style={styles.frontChoice}>
+        <View style={styles.centerHoriz}>
+          <Image
+            style={styles.profilePic}
+            source={require('../images/SoK.jpg')}
+          />
+        </View>
+        <TouchableHighlight onPress={()=>this.props.goPlace('WORKOUT')} style={[styles.frontChoice, styles.centerVert]}>
           <Text>
             <LightLarger>Start Workout</LightLarger>
           </Text>
         </TouchableHighlight>
-        <TouchableHighlight style={styles.frontChoice}>
+        <TouchableHighlight style={[styles.frontChoice, styles.centerVert]}>
           <Text>
             <LightLarger>My Stats</LightLarger>
           </Text>
         </TouchableHighlight>
-        <TouchableHighlight style={styles.frontChoice}>
+        <TouchableHighlight style={[styles.frontChoice, styles.centerVert]}>
           <Text>
             <LightLarger>My Routines</LightLarger>
           </Text>
         </TouchableHighlight>
-        <TouchableHighlight style={styles.frontChoice}>
+        <TouchableHighlight style={[styles.frontChoice, styles.centerVert]}>
           <Text>
             <LightLarger>Exercises</LightLarger>
           </Text>
@@ -44,6 +48,20 @@ export default class Front extends Component {
     )
   }
 }
+
+const mapStateToProps = (state) => ({
+  route: state.route
+ })
+
+const mapDispatchToProps = (dispatch) => (
+  {
+    goPlace: (place) => {
+      dispatch(goPlace(place))
+    }
+  }
+)
+
+export default connect(mapStateToProps, mapDispatchToProps)(Front);
 
 const dummyUser = {
   firstName: 'Scout',

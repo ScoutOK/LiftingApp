@@ -14,58 +14,29 @@ import {
   StatusBar
 } from 'react-native';
 
+//redux stuff
+import { Provider } from 'react-redux'
+import store from './store'
+
 //Components
 import TopBanner from './components/TopBanner';
 import ActionBar from './components/ActionBar';
-import Workout from './components/Workout';
+import ViewSwitcher from './components/ViewSwitcher';
 import Front from './components/Front';
 
-const styles = require('./style.js');
+import styles from './style.js';
 
 export default class LiftingApp extends Component {
   render() {
-    const routes = [
-    {title: 'Front Page', index: 0},
-    {title: 'Workout', index: 1},
-  ];
     return (
-      <View style={styles.container}>
-        <StatusBar
-           barStyle="light-content"
-         />
-        <TopBanner style={styles.topBottom}/>
-          <Navigator
-            initialRoute={routes[0]}
-            initialRouteStack={routes}
-            renderScene={(route, navigator) => {
-              if(route.title == 'Front Page') {
-                return (
-                  <View style={styles.mainBlock}>
-                    <Front
-                    // Function to call when a new scene should be displayed
-                     toWorkout={() => {
-                       navigator.push({
-                         title: 'Workout',
-                         index: 1,
-                       });
-                     }}
-                    />
-                  </View>
-                )
-              }
-              if(route.title == 'Workout') {
-                return (
-                  <ScrollView style={styles.mainBlock}>
-                    <Workout/>
-                  </ScrollView>
-                )
-              }
-            }}
-          />
-        <ActionBar style={styles.topBottom} toHome={() => {
-                       Navigator.push(routes[1]);
-                     }}/>
-      </View>
+      <Provider store={store}>
+        <View style={styles.container}>
+          <StatusBar barStyle="light-content" />
+          <TopBanner style={styles.topBottom}/>
+          <ViewSwitcher />
+          <ActionBar style={styles.topBottom}/>
+        </View>
+      </Provider>
     );
   }
 }
