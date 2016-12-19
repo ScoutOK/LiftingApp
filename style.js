@@ -202,6 +202,13 @@ export default styles = StyleSheet.create({
     padding: 10,
     justifyContent: 'space-between'
   },
+  catalogDrop: {
+    paddingLeft: 30,
+    paddingRight: 30,
+    paddingTop: 15,
+    paddingBottom: 15,
+    backgroundColor: darkest,
+  },
   flex1: {
     flex: 1,
   },
