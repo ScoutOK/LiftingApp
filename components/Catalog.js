@@ -43,43 +43,8 @@ export default class Catalog extends Component {
             value={this.state.text}
           />
         </View>
-        <ListView
-          dataSource = {this.state.dataSource}
-          renderRow={(exercise, sectionId, rowId) => {
-            return (
-              <View>
-                <View style={styles.catalogRow}>
-                  <View style={styles.flex3}>
-                    <Text>{exercise.name}</Text>
-                  </View>
-                  <View style={styles.flex1}>
-                    <Text>Details</Text>
-                  </View>
-                  <View style={styles.flex1}>
-                    <Text>Add</Text>
-                  </View>
-                </View>
-                {this.state.showDetails ?
-                  <View style={styles.catalogDrop}>
-                    <View>
-                      <LightText>Exercise Type: {exercise.exerciseType}</LightText>
-                    </View>
-                    <View>
-                      <LightText>Main Muscle: {exercise.mainMuscle}</LightText>
-                    </View>
-                  </View>
-                :
-                  <TouchableHighlight style={styles.catalogSep} onPress={()=>(this.setState({showDetails: true}))}>
-                    <Text>
-                      <LightText>Test Text</LightText>
-                    </Text>
-                  </TouchableHighlight>
-
-                }
-              </View>
-            )
-          }}
-        />
+        {dummyExercises && dummyExercises.map(
+          )}
       </View>
     )
   }
@@ -132,37 +97,3 @@ const dummyExercises = [
   }
 ]
 
-const cataRow = (exercise, sectionId, rowId) => {
-  return (
-    <View>
-      <View style={styles.catalogRow}>
-        <View style={styles.flex3}>
-          <Text>{exercise.name}</Text>
-        </View>
-        <View style={styles.flex1}>
-          <Text>Details</Text>
-        </View>
-        <View style={styles.flex1}>
-          <Text>Add</Text>
-        </View>
-      </View>
-      {this.state.showDetails ?
-        <View style={styles.catalogDrop}>
-          <View>
-            <LightText>Exercise Type: {exercise.exerciseType}</LightText>
-          </View>
-          <View>
-            <LightText>Main Muscle: {exercise.mainMuscle}</LightText>
-          </View>
-        </View>
-      :
-        <TouchableHighlight style={styles.catalogSep} onPress={()=>(showDetails = true)}>
-          <Text>
-            <LightText>Test Text</LightText>
-          </Text>
-        </TouchableHighlight>
-
-      }
-    </View>
-  )
-}
