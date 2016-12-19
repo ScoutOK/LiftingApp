@@ -209,6 +209,10 @@ export default styles = StyleSheet.create({
     paddingBottom: 15,
     backgroundColor: darkest,
   },
+  catalogSep: {
+    backgroundColor: darkest,
+    height: 20,
+  },
   flex1: {
     flex: 1,
   },

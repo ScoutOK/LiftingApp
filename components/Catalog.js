@@ -4,7 +4,8 @@ import {
   Text,
   View,
   ListView,
-  TextInput
+  TextInput,
+  TouchableHighlight
 } from 'react-native';
 
 //redux
@@ -14,22 +15,10 @@ import { connect } from 'react-redux';
 import styles from '../style.js'
 import {LightText, DarkText} from './TextFormats';
 
-export default class Catalog extends Component {
-  catalogDetails (exercise, bool) {
-  if (bool) {
-    return (
-      <View style={styles.catalogDrop}>
-        <View>
-          <LightText>Exercise type: {exercise.exerciseType}</LightText>
-        </View>
-        <View>
-          <LightText>Main muscle: {exercise.mainMuscle}</LightText>
-        </View>
-      </View>
-    )
-  }
+//render function
+import CatalogRow from './CatalogRow'
 
-  }
+export default class Catalog extends Component {
 
   constructor() {
     super();
@@ -38,10 +27,10 @@ export default class Catalog extends Component {
     this.state = {
       dataSource: ds.cloneWithRows(dummyExercises),
       search: '',
-      showDetails: false,
     };
   }
   render() {
+    let showDetails = false;
     return (
       <View style={styles.workoutView}>
         <View style={styles.workoutHead}>
@@ -56,29 +45,7 @@ export default class Catalog extends Component {
         </View>
         <ListView
           dataSource = {this.state.dataSource}
-          renderRow={(exercise, sectionId, rowId) => {
-            let searchLength = this.state.search.length
-            let showDetails = true;
-            console.log(this.state.search)
-            if(this.state.search.toLowerCase() == exercise.name.substring(0, searchLength).toLowerCase()) {
-              return (
-                <View>
-                  <View style={styles.catalogRow}>
-                    <View style={styles.flex3}>
-                      <Text>{exercise.name}</Text>
-                    </View>
-                    <View style={styles.flex1} onPress={()=>(showDetails = true)}>
-                      <Text>Details</Text>
-                    </View>
-                    <View style={styles.flex1}>
-                      <Text>Add</Text>
-                    </View>
-                  </View>
-                  {this.catalogDetails(exercise, showDetails)}
-                </View>
-              )
-            }
-          }}
+          renderRow={CatalogRow}
         />
       </View>
     )
