@@ -42,11 +42,16 @@ export default class cataRow extends Component {
             <View>
               <LightText>Main muscle: {this.props.exercise.mainMuscle}</LightText>
             </View>
+            <TouchableHighlight style={styles.catalogSep} onPress={()=>this.setState({showDetails: false})}>
+              <Text>
+                <LightText>Collapse</LightText>
+              </Text>
+          </TouchableHighlight>
           </View>
         :
           <TouchableHighlight style={styles.catalogSep} onPress={()=>this.setState({showDetails: true})}>
             <Text>
-              <LightText>Test Text</LightText>
+              <LightText>Expand</LightText>
             </Text>
           </TouchableHighlight>
 

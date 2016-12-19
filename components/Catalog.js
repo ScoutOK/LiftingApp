@@ -27,7 +27,6 @@ export default class Catalog extends Component {
     this.state = {
       dataSource: ds.cloneWithRows(dummyExercises),
       search: '',
-      showDetails: false,
     };
   }
   render() {
@@ -44,7 +43,10 @@ export default class Catalog extends Component {
           />
         </View>
         {dummyExercises && dummyExercises.map((movement, idx) => {
-          return <CatalogRow exercise={movement} key={idx}/>
+
+          if (movement.name.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1) {
+            return <CatalogRow exercise={movement} key={idx}/>
+          }
         })
       }
       </View>
