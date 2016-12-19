@@ -15,8 +15,8 @@ import { connect } from 'react-redux';
 import styles from '../style.js'
 import {LightText, DarkText} from './TextFormats';
 
-//render function
-//import CatalogRow from './CatalogRow'
+//row component
+import CatalogRow from './CatalogRow'
 
 export default class Catalog extends Component {
 
@@ -43,8 +43,10 @@ export default class Catalog extends Component {
             value={this.state.text}
           />
         </View>
-        {dummyExercises && dummyExercises.map(
-          )}
+        {dummyExercises && dummyExercises.map((movement, idx) => {
+          return <CatalogRow exercise={movement} key={idx}/>
+        })
+      }
       </View>
     )
   }
