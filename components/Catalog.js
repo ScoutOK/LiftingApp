@@ -16,7 +16,7 @@ import styles from '../style.js'
 import {LightText, DarkText} from './TextFormats';
 
 //render function
-import CatalogRow from './CatalogRow'
+//import CatalogRow from './CatalogRow'
 
 export default class Catalog extends Component {
 
@@ -27,10 +27,10 @@ export default class Catalog extends Component {
     this.state = {
       dataSource: ds.cloneWithRows(dummyExercises),
       search: '',
+      showDetails: false,
     };
   }
   render() {
-    let showDetails = false;
     return (
       <View style={styles.workoutView}>
         <View style={styles.workoutHead}>
@@ -45,7 +45,40 @@ export default class Catalog extends Component {
         </View>
         <ListView
           dataSource = {this.state.dataSource}
-          renderRow={CatalogRow}
+          renderRow={(exercise, sectionId, rowId) => {
+            return (
+              <View>
+                <View style={styles.catalogRow}>
+                  <View style={styles.flex3}>
+                    <Text>{exercise.name}</Text>
+                  </View>
+                  <View style={styles.flex1}>
+                    <Text>Details</Text>
+                  </View>
+                  <View style={styles.flex1}>
+                    <Text>Add</Text>
+                  </View>
+                </View>
+                {this.state.showDetails ?
+                  <View style={styles.catalogDrop}>
+                    <View>
+                      <LightText>Exercise Type: {exercise.exerciseType}</LightText>
+                    </View>
+                    <View>
+                      <LightText>Main Muscle: {exercise.mainMuscle}</LightText>
+                    </View>
+                  </View>
+                :
+                  <TouchableHighlight style={styles.catalogSep} onPress={()=>(this.setState({showDetails: true}))}>
+                    <Text>
+                      <LightText>Test Text</LightText>
+                    </Text>
+                  </TouchableHighlight>
+
+                }
+              </View>
+            )
+          }}
         />
       </View>
     )
@@ -98,3 +131,38 @@ const dummyExercises = [
     equipment: 'dumbbell',
   }
 ]
+
+const cataRow = (exercise, sectionId, rowId) => {
+  return (
+    <View>
+      <View style={styles.catalogRow}>
+        <View style={styles.flex3}>
+          <Text>{exercise.name}</Text>
+        </View>
+        <View style={styles.flex1}>
+          <Text>Details</Text>
+        </View>
+        <View style={styles.flex1}>
+          <Text>Add</Text>
+        </View>
+      </View>
+      {this.state.showDetails ?
+        <View style={styles.catalogDrop}>
+          <View>
+            <LightText>Exercise Type: {exercise.exerciseType}</LightText>
+          </View>
+          <View>
+            <LightText>Main Muscle: {exercise.mainMuscle}</LightText>
+          </View>
+        </View>
+      :
+        <TouchableHighlight style={styles.catalogSep} onPress={()=>(showDetails = true)}>
+          <Text>
+            <LightText>Test Text</LightText>
+          </Text>
+        </TouchableHighlight>
+
+      }
+    </View>
+  )
+}
