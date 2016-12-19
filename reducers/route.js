@@ -9,6 +9,9 @@ export default function reducer (state = [], action) {
     case WORKOUT:
       return WORKOUT;
 
+    case CATALOG:
+      return CATALOG;
+
     default:
       return HOME;
   }
@@ -18,6 +21,7 @@ export default function reducer (state = [], action) {
 
 const HOME = 'HOME';
 const WORKOUT = 'WORKOUT';
+const CATALOG = 'CATALOG';
 
 export const goPlace = (place) => ({
   type: place,

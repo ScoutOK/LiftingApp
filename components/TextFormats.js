@@ -33,3 +33,13 @@ export class LightLarger extends Component {
     )
   }
 }
+
+export class LightBold extends Component {
+  render() {
+    return (
+      <Text style={[styles.lightText, styles.bold]}>
+        {this.props.children}
+      </Text>
+    )
+  }
+}

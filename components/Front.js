@@ -39,7 +39,7 @@ export class Front extends Component {
             <LightLarger>My Routines</LightLarger>
           </Text>
         </TouchableHighlight>
-        <TouchableHighlight style={[styles.frontChoice, styles.centerVert]}>
+        <TouchableHighlight onPress={()=>this.props.goPlace('CATALOG')} style={[styles.frontChoice, styles.centerVert]}>
           <Text>
             <LightLarger>Exercises</LightLarger>
           </Text>

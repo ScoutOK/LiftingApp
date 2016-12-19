@@ -2,11 +2,12 @@
 
 import {StyleSheet} from 'react-native';
 
-const darkest = 'midnightblue'
-const darker = 'steelblue'
-const middle = 'skyblue'
-const whitish = '#eee'
-const blackish = '#151515'
+const darkest = 'midnightblue';
+const darker = 'steelblue';
+const middle = 'skyblue';
+const whitish = '#eee';
+const blackish = '#151515';
+const thin = StyleSheet.hairlineWidth;
 
 export default styles = StyleSheet.create({
   container: {
@@ -24,6 +25,7 @@ export default styles = StyleSheet.create({
   },
   appTitleCont: {
     flexDirection: 'row',
+    justifyContent: 'center'
   },
   appTitle: {
     color: whitish,
@@ -180,12 +182,39 @@ export default styles = StyleSheet.create({
   },
   minorSeparator: {
     flex: 1,
-    height: StyleSheet.hairlineWidth,
+    height: thin,
     backgroundColor: darker,
   },
   rightTableBorder: {
     borderRightColor: '#888',
-    borderRightWidth: StyleSheet.hairlineWidth,
+    borderRightWidth: thin,
+  },
+  searchBox: {
+    height: 40,
+    borderColor: darker,
+    borderRadius: 4,
+    borderWidth: thin,
+    paddingLeft: 10,
+    paddingRight: 10,
+  },
+  catalogRow: {
+    flexDirection: 'row',
+    padding: 10,
+    justifyContent: 'space-between'
+  },
+  catalogDrop: {
+    paddingLeft: 30,
+    paddingRight: 30,
+    paddingTop: 15,
+    paddingBottom: 15,
+    backgroundColor: darkest,
+  },
+  catalogSep: {
+    backgroundColor: darkest,
+    height: 20,
+  },
+  flex1: {
+    flex: 1,
   },
   flex2: {
     flex: 2,
@@ -194,7 +223,7 @@ export default styles = StyleSheet.create({
     flex: 3,
   },
   lightText: {
-    color: '#eee',
+    color: whitish,
   },
   darkText: {
     color: blackish,
@@ -215,6 +244,9 @@ export default styles = StyleSheet.create({
   centerVert: {
     flexDirection: 'column',
     justifyContent: 'center',
+  },
+  bold: {
+    fontWeight: 'bold',
   }
 });
 
